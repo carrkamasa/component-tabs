@@ -13,6 +13,9 @@ Simply copy:
 
 The HTML structure can be extracted from ```index.html```
 
+## Demo
+[A demo is available on Codepen](https://codepen.io/nathobson/pen/MBozqy)
+
 ## Roadmap
 - [x] Initial release
 - [ ] Remove any jQuery dependency
