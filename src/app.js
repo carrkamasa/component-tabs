@@ -6,15 +6,16 @@ jQuery(document).ready(function($){
         let initialTabHeight = document.querySelector('[data-content]').scrollHeight
         document.querySelector('.tabs__content-container').style.minHeight = initialTabHeight + 'px'
         document.querySelector('.tabs__content-container').style.maxHeight = initialTabHeight + 'px'
+
+        // When the window is resizes, we need to recalculate the height of the container
+        // based on the current active tab
+        window.onresize = function(event) {
+            let activeTabHeight = document.querySelector('.tabs__content.active').scrollHeight
+            document.querySelector('.tabs__content-container').style.minHeight = activeTabHeight + 'px'
+            document.querySelector('.tabs__content-container').style.maxHeight = activeTabHeight + 'px'
+        };
     }
 
-    // When the window is resizes, we need to recalculate the height of the container
-    // based on the current active tab
-    window.onresize = function(event) {
-        let activeTabHeight = document.querySelector('.tabs__content.active').scrollHeight
-        document.querySelector('.tabs__content-container').style.minHeight = activeTabHeight + 'px'
-        document.querySelector('.tabs__content-container').style.maxHeight = activeTabHeight + 'px'
-    };
 
     // When a tab title is clicked
     $('[data-tab]').on('click', event => {
